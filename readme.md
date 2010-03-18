@@ -15,10 +15,10 @@ Features:
 
 Its a music section, with list of tunes, and each song view has:
 
--A description
--Name of the artist/song title
--Flash player (it use player.swf from wpaudioplayer, no javascript dependancy) 
--A link to the MP3 file (that you can disable)
+- A description
+- Name of the artist/song title
+- Flash player (it use player.swf from wpaudioplayer, no javascript dependancy) 
+- A link to the MP3 file (that you can disable)
 
 The admin interface allow you to create new song and change to colors/settings/size of the flash player.
 
