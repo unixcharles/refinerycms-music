@@ -1,0 +1,10 @@
+<% content_for :body_content_right do %>
+  <ul id="music">
+    <% @songs.each do |song| %>
+      <li id="track">
+        <%= link_to song.title, song_url(song) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<%= render :partial => "/shared/content_page" %>

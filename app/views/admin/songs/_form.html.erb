@@ -1,0 +1,47 @@
+<%= error_messages_for :song -%>
+<% form_for [:admin, @song] do |f| -%>
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :description -%>
+    <%= f.text_area :description, :rows => 20, :cols => 140, :class => 'wymeditor' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :artist -%>
+    <%= f.text_field :artist -%>
+  </div>
+  
+  <div class='field images_field'>
+		<span class='clearfix label_inline_with_link'>
+	    <%= label_tag('MP3') %>
+      <%= link_to "#{refinery_icon_tag "add.png"} Select an MP3", "#{insert_admin_resources_url(:dialog => true, :width => 950, :height => 510, :callback => "resource_added")}", :name => "Select an MP3", :id => "add_resource_link" %>
+		</span>
+    <%= f.hidden_field :resource_id %>
+	</div>
+  
+  <div class='field'>
+    <%= f.label :show_download_link -%>
+    <%= f.check_box :show_download_link -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions", :locals => {:f => f, :continue_editing => false} %>
+<% end -%>
+
+
+<% content_for :head do %>
+  <script type='text/javascript'>
+  resource_added = function(resource) {
+    resource_id = $(resource).attr('id').replace('resource_', '');
+    $('#song_resource_id').val(resource_id);
+    $('.ui-widget-overlay').remove();
+    $('.ui-dialog').remove();
+  }
+
+  </script>
+<% end %>
+

@@ -1,0 +1,16 @@
+<div id='actions'>
+  <ul>
+    <li>
+      <%= link_to "Manage Music", admin_songs_url, :class => "back_icon" %>
+    </li>
+  </ul>
+</div>
+<div id='records'>
+  <% if @music_settings.present? and @music_settings.any? %>
+    <%= will_paginate @music_settings, :previous_label => '&laquo;', :next_label => '&raquo;' %>
+     <ul id='sortable_list'>
+      <%= render :partial => 'music_setting', :collection => @music_settings %>
+     </ul>
+    <%= will_paginate @music_settings, :previous_label => '&laquo;', :next_label => '&raquo;' %>
+  <% end %>
+</div>

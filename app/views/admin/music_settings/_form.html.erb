@@ -1,0 +1,67 @@
+<%= error_messages_for :music_setting -%>
+<% form_for [:admin, @music_setting] do |f| -%>
+  
+  <p>
+    <strong>
+      <%=h @music_setting.description -%>
+    </strong>
+  </p>
+  <% if @music_setting.value.nil? && @music_setting.size.nil? %>
+    <div class='field'>
+      <%= f.label :color -%>
+      <div id="colorSelector"><div style="background-color: #<%= @music_setting.color %>"></div></div>
+      <%= f.hidden_field :color -%>
+    </div>
+    <script type='text/javascript'>
+    $('#colorSelector').ColorPicker({
+    	color: '#0000ff',
+    	onShow: function (colpkr) {
+    		$(colpkr).fadeIn(500);
+    		return false;
+    	},
+    	onHide: function (colpkr) {
+    		$(colpkr).fadeOut(500);
+    		return false;
+    	},
+    	onChange: function (hsb, hex, rgb) {
+    		$('#colorSelector div').css('backgroundColor', '#' + hex);
+    		$('#music_setting_color').val(hex);
+    	}
+    });
+
+    </script>
+  <% elsif @music_setting.value.nil? && @music_setting.color.nil? %>
+    <div class='field'>
+      <%= f.label :size -%>
+      <%= f.text_field :size -%>
+    </div>
+  <% else %>
+    <div class='field'>
+      <%= f.label :value -%>
+      <%= f.check_box :value -%>
+    </div>
+  <% end %>
+
+  <%= render :partial => "/shared/admin/form_actions", :locals => {:f => f, :continue_editing => false} %>
+<% end -%>
+
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'colorpicker' %>
+  <%= javascript_include_tag 'colorpicker' %>
+  <style>
+    #colorSelector {
+    	position: relative;
+    	width: 36px;
+    	height: 36px;
+    	background: url(../images/select.png);
+    }
+    #colorSelector div {
+    	position: absolute;
+    	top: 3px;
+    	left: 3px;
+    	width: 30px;
+    	height: 30px;
+    	background: url(../images/select.png) center;
+    }
+  </style>
+<% end %>

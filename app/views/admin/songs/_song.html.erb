@@ -1,0 +1,16 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(song) -%>">
+  <span class='title'>
+    <span class='actions'>
+      <%= link_to refinery_icon_tag("application_go.png"), song_url(song),
+          :title => 'View this song<br/><em>Opens in a new window</em>',
+          :target => "_blank" %>
+      <%= link_to refinery_icon_tag("application_edit.png"), edit_admin_song_path(song),
+           :title => 'Edit this song' %>
+      <%= link_to refinery_icon_tag("delete.png"), admin_song_path(song),
+          :confirm => 'Are you sure you want to remove this song forever?',
+          :class => "cancel", :method => :delete,
+          :title => 'Remove this song forever' %>
+    </span>
+    <%=h song.title %> <span class="preview">&nbsp;</span>
+  </span>
+</li>

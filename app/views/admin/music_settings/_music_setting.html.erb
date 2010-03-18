@@ -1,0 +1,30 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(music_setting) -%>">
+  <span class='title'>
+    <span class='actions'>
+      <% if music_setting.value != nil  %>
+        <%= link_to refinery_icon_tag("#{music_setting.value ? 'cross' : 'tick'}.png"), 
+            {:action => "toggle_setting", :id => music_setting.id},
+            {:title => "Set this setting to #{music_setting.value ? 'false' : 'true'}"} %>
+      <% end %>
+      <% if music_setting.color %>
+        <%= link_to refinery_icon_tag("application_edit.png"), edit_admin_music_setting_path(music_setting),
+            :title => 'Edit this color setting' if music_setting.value.nil? %>
+      <% end %>
+
+      <% if music_setting.size %>
+        <%= link_to refinery_icon_tag("application_edit.png"), edit_admin_music_setting_path(music_setting),
+            :title => 'Edit this color setting' if music_setting.value.nil? %>
+      <% end %>
+            
+    </span>
+    <strong><%=h music_setting.name %></strong> 
+    is set to <strong>
+      <%= music_setting.value ? 'true' : 'false' unless music_setting.value.nil? %>
+      <%= content_tag('span', "##{music_setting.color}", 
+          :style => "background-color:##{music_setting.color};padding:4px" ) unless music_setting.color.nil? %>
+      <%= music_setting.size.to_s + 'px' unless music_setting.size.nil? -%>
+      </strong> 
+    <%= link_to '?', edit_admin_music_setting_path(music_setting), :title => music_setting.description %>
+    <span class="preview">&nbsp;</span>
+  </span>
+</li>
