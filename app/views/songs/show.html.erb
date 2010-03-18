@@ -1,15 +1,15 @@
 <% content_for :body_content_left do %>
   <div id='body_content_left' class='clearfix'>
     <h2 id='song_title'><%=h @song.title %> from <%=h @song.artist %></h2>
-    <% if @song.file %>
+    <% if @song.resource %>
       <%= render :partial => 'player' %>
     <% else %>
       Oops! the song exist, but we don't have the file yet!
     <% end %>
     <%= @song.description %>
-    <% if @song.show_download_link && @song.file %>
+    <% if @song.show_download_link && @song.resource %>
       <div style="text-align: center">
-        <%= link_to 'Download this track!', @song.file %><br/>
+        <%= link_to 'Download this track!', @song.resource.public_filename %><br/>
         (you might need to right click and save as...)
       </div>
     <% end %>

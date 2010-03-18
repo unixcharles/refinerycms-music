@@ -17,11 +17,8 @@
   </div>
   
   <div class='field images_field'>
-		<span class='clearfix label_inline_with_link'>
-	    <%= label_tag('MP3') %>
-      <%= link_to "#{refinery_icon_tag "add.png"} Select an MP3", "#{insert_admin_resources_url(:dialog => true, :width => 950, :height => 510, :callback => "resource_added")}", :name => "Select an MP3", :id => "add_resource_link" %>
-		</span>
-    <%= f.hidden_field :resource_id %>
+    <%= f.label :resource, 'Audio resource' %>
+    <%= render :partial => "/shared/admin/resource_picker", :locals => {:f => f, :field => :resource_id, :resource => @song.resource, :description => "audio resource" } %>
 	</div>
   
   <div class='field'>
@@ -35,12 +32,6 @@
 
 <% content_for :head do %>
   <script type='text/javascript'>
-  resource_added = function(resource) {
-    resource_id = $(resource).attr('id').replace('resource_', '');
-    $('#song_resource_id').val(resource_id);
-    $('.ui-widget-overlay').remove();
-    $('.ui-dialog').remove();
-  }
 
   </script>
 <% end %>

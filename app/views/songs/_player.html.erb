@@ -27,7 +27,7 @@
   # file info
   flashvar << "titles=#{CGI::escape(@song.title)}"
   flashvar << "artists=#{CGI::escape(@song.artist)}"
-  flashvar << "soundFile=#{CGI::escape(@song.file)}"
+  flashvar << "soundFile=#{CGI::escape(@song.resource.public_filename)}"
   # sizes
   flashvar << "width=#{MusicSetting.width}"
 

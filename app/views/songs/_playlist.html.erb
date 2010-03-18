@@ -30,9 +30,11 @@
   files = []
 
   @songs.each do |song|
-    artists << CGI::escape(song.title)
-    titles << CGI::escape(song.artist)
-    files << CGI::escape(song.file)
+    if song.resource
+      artists << CGI::escape(song.title)
+      titles << CGI::escape(song.artist)
+      files << CGI::escape(song.resource.public_filename)
+    end
   end
   
   flashvar << "titles=#{titles.join(',')}"
