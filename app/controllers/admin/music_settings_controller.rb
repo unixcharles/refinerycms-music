@@ -7,7 +7,7 @@ class Admin::MusicSettingsController < Admin::BaseController
     @music_setting = MusicSetting.find(params[:id])
     @music_setting.toggle!(:value)
     
-    flash[:notice] = "Comment from '#{@blog_setting.name}' has been set to " +
+    flash[:notice] = "Comment from '#{@music_setting.name}' has been set to " +
     if @music_setting.value
       "true"
     else
