@@ -12,7 +12,8 @@ class CreateMusics < ActiveRecord::Migration
 
       t.timestamps
     end
-
+    
+    add_index :songs, :id
     add_index :songs, :id, :published
 
     create_table :music_settings do |t|
