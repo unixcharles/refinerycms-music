@@ -26,7 +26,7 @@ Support for MP3 only, you may want to hook another js/flash player anyway.
 
 Installation (as a plugin)
 --------------------------
-> script/plugin install git@github.com:unixcharles/refinerycms-music.git
+> script/plugin install git://github.com/unixcharles/refinerycms-music.git
 
 > rake refinery:music:install
 
