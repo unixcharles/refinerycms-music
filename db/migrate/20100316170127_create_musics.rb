@@ -14,7 +14,7 @@ class CreateMusics < ActiveRecord::Migration
     end
     
     add_index :songs, :id
-    add_index :songs, :id, :published
+    add_index :songs, [:id, :published]
 
     create_table :music_settings do |t|
       t.string   :name
