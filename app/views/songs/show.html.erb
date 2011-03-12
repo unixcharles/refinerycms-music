@@ -5,24 +5,24 @@
 <% content_for :body_content_left do %>
   <section>
     <% if @song.resource %>
-      <%= render :partial => 'player' %>
+      <%= render :partial => 'dewplayer' %>
     <% else %>
-      Oops! the song exist, but we don't have the file yet!
+      <%= t('.nofile') %>
     <% end %>
     <%= @song.description %>
     <% if @song.show_download_link && @song.resource %>
       <div style="text-align: center">
-        <%= link_to 'Download this track!', @song.resource.url %><br/>
-        (you might need to right click and save as...)
+        <%= link_to t('.download'), @song.resource.url %><br/>
+        <%= t('.download-advice') %>
       </div>
     <% end %>
   </section>
 <% end %>
 
-
 <% content_for :body_content_right do %>
   <aside>
-    <ul id="music">
+    <h2><%= t('.other') %></h2>
+    <ul id="track">
       <% @songs.each do |song| %>
         <li id="track">
           <% if @song == song %>
@@ -35,5 +35,4 @@
     </ul>
   </aside>
 <% end %>
-
 <%= render :partial => "/shared/content_page" %>

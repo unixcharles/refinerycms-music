@@ -1,9 +1,9 @@
 Refinery::Application.routes.draw do
   resources :music, :as => :songs, :controller => :songs
-
+  #resources :songs, :as => :music
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
-    resources :music_settings, :songs
-    resources :music, :except => :show do
+    resources :music_settings
+    resources :music, :as => :songs, :controller => :songs, :except => :show do
       collection do
         post :update_positions
       end
