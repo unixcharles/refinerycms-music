@@ -1,0 +1,21 @@
+nb:
+  plugins:
+    music:
+      title: Music
+  admin:
+    songs:
+      actions:
+        create_new: Lag en ny Song
+        reorder: Endre rekkefølgen på Songs
+        reorder_done: Ferdig å endre rekkefølgen Songs
+      records:
+        title: Songs
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Songs enda. Klikk på "Lag en ny Song" for å legge til din første song.
+      music:
+        view_live_html: Vis hvordan denne song ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne song
+        delete: Fjern denne song permanent
+  music:
+    show:
+      other: Andre Songs

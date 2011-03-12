@@ -1,8 +1,12 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :songs, :as => 'music'
+Refinery::Application.routes.draw do
+  resources :music, :as => :songs, :controller => :songs
 
-  map.namespace(:admin, :path_prefix => 'refinery') do |admin|
-    admin.resources :songs, :as => 'music'
-    admin.resources :music_settings
+  scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
+    resources :music_settings, :songs
+    resources :music, :except => :show do
+      collection do
+        post :update_positions
+      end
+    end
   end
 end

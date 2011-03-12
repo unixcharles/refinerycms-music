@@ -1,6 +1,7 @@
-class CreateMusics < ActiveRecord::Migration
+class CreateMusic < ActiveRecord::Migration
 
   def self.up
+
     create_table :songs do |t|
       t.string :title
       t.string :artist
@@ -58,35 +59,16 @@ class CreateMusics < ActiveRecord::Migration
     MusicSetting.create(:name => "remaining", :value => false, :description => "if true, shows remaining track time rather than ellapsed time")
     MusicSetting.create(:name => "noinfo", :value => false, :description => "if true, disables the track information display")
 
-
-    User.find(:all).each do |user|
-      user.plugins.create(:title => "Music", :position => (user.plugins.maximum(:position) || -1) +1)
-    end
-
-    page = Page.create(
-      :title => "Music",
-      :link_url => "/music",
-      :deletable => false,
-      :position => ((Page.maximum(:position, :conditions => "parent_id IS NULL") || -1)+1),
-      :menu_match => "^/music(\/|\/.+?|)$"
-    )
-    RefinerySetting.find_or_set(:default_page_parts, ["body", "side_body"]).each do |default_page_part|
-      page.parts.create(:title => default_page_part, :body => nil)
-    end
+    load(Rails.root.join('db', 'seeds', 'music.rb'))
   end
 
   def self.down
-    UserPlugin.destroy_all({:title => "Music"})
+    UserPlugin.destroy_all({:name => "music"})
 
-    Page.find_all_by_link_url("/music").each do |page|
-      page.link_url, page.menu_match, page.deletable = nil
-      page.destroy!
-    end
-    Page.destroy_all({:link_url => "/music"})
+    Page.delete_all({:link_url => "/music"})
 
     drop_table :songs
     drop_table :music_settings
-    
   end
 
 end

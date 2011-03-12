@@ -1,0 +1,21 @@
+en:
+  plugins:
+    music:
+      title: Music
+  admin:
+    music:
+      actions:
+        create_new: Add New Song
+        reorder: Reorder Songs
+        reorder_done: Done Reordering Songs
+      records:
+        title: Musics
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no songs yet. Click "Add New Music" to add your first music.
+      music:
+        view_live_html: View this song live <br/><em>(opens in a new window)</em>
+        edit: Edit this song
+        delete: Remove this song forever
+  music:
+    show:
+      other: Other Songs

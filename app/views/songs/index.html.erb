@@ -1,5 +1,5 @@
-<% content_for :body_content_right do %>
-  <ul id="music">
+<% content_for :body_content_left do %>
+  <ul id="songs">
     <% @songs.each do |song| %>
       <li id="track">
         <%= link_to song.title, song_url(song) %>
@@ -7,4 +7,5 @@
     <% end %>
   </ul>
 <% end %>
+
 <%= render :partial => "/shared/content_page" %>

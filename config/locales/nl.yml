@@ -1,0 +1,21 @@
+nl:
+  plugins:
+    music:
+      title: Music
+  admin:
+    music:
+      actions:
+        create_new: Maak een nieuwe Song
+        reorder: Wijzig de volgorde van de Songs
+        reorder_done: Klaar met het wijzingen van de volgorde van de Songs
+      records:
+        title: Songs
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Songs. Druk op 'Maak een nieuwe Song' om de eerste aan te maken.
+      song:
+        view_live_html: Bekijk deze song op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze song
+        delete: Verwijder deze song voor eeuwig
+  music:
+    show:
+      other: Andere Songs

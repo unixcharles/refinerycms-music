@@ -1,6 +1,9 @@
+<% content_for :body_content_title do %>
+  <%=h @song.artist %> - <%=h @song.title %>
+<% end %>
+
 <% content_for :body_content_left do %>
-  <div id='body_content_left' class='clearfix'>
-    <h2 id='song_title'><%=h @song.title %> from <%=h @song.artist %></h2>
+  <section>
     <% if @song.resource %>
       <%= render :partial => 'player' %>
     <% else %>
@@ -9,23 +12,28 @@
     <%= @song.description %>
     <% if @song.show_download_link && @song.resource %>
       <div style="text-align: center">
-        <%= link_to 'Download this track!', @song.resource.public_filename %><br/>
+        <%= link_to 'Download this track!', @song.resource.url %><br/>
         (you might need to right click and save as...)
       </div>
     <% end %>
-  </div>
+  </section>
 <% end %>
+
+
 <% content_for :body_content_right do %>
-  <ul id="music">
-    <% @songs.each do |song| %>
-      <li id="track">
-        <% if @song == song %>
-         <b><%= link_to song.title, song_url(song) %></b>
-        <% else %>
-          <%= link_to song.title, song_url(song) %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+  <aside>
+    <ul id="music">
+      <% @songs.each do |song| %>
+        <li id="track">
+          <% if @song == song %>
+           <b><%= link_to song.title, song_url(song) %></b>
+          <% else %>
+            <%= link_to song.title, song_url(song) %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
 <% end %>
+
 <%= render :partial => "/shared/content_page" %>

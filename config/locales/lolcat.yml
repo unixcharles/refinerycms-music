@@ -1,0 +1,21 @@
+lolcat:
+  plugins:
+    music:
+      title: Music
+  admin:
+    music:
+      actions:
+        create_new: CREATE NEW Song
+        reorder: REORDR Songs
+        reorder_done: DUN REORDERIN Songs
+      records:
+        title: Songs
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Songs YET. CLICK "CREATE NEW Song" 2 ADD UR FURST song.
+      song:
+        view_live_html: VIEW DIS song LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS song
+        delete: REMOOV DIS song FOREVR
+  music:
+    show:
+      other: OTHR Songs
