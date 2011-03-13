@@ -13,31 +13,26 @@ Its a music section, with list of tunes, and each song view has:
 
 - A description
 - Name of the artist/song title
-- You can choose your player
-  - dewplayer-mini.swf from dewplayer, no javascript dependancy ( settings not work actually )
-  - player.swf from wpaudioplayer, no javascript dependancy ( not work for me file not found)
+- player.swf from wpaudioplayer, no javascript dependancy ( not work for me file not found)
 - A link to the MP3 file (that you can disable)
 
 The admin interface allow you to create new song and change to colors/settings/size of the flash player.
 
 ## Todo:
 
-- Support settings of dewplayer
-- Fix wpaudioplayer bug file not found
+- Change Admin::MusicSettingsController to support i18n
 
 ## Change log:
 
+- wpaudioplayer works again
 - Support rails 3 and latest version of refinerycms
-- Support gem Installation using Bundler
+- Support gem installation using Bundler
 - Use i18n for multilanguage support
 
 ## Credit
 
 Fork of the project of unixcharles (Charles Barbier)
 https://github.com/unixcharles/refinerycms-music
-
-It use the dewplayer.swf from this project:
-http://www.alsacreations.fr/dewplayer-en.html
 
 And a color picker right here:
 http://www.eyecon.ro/colorpicker/

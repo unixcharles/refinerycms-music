@@ -50,7 +50,7 @@ class CreateMusic < ActiveRecord::Migration
     MusicSetting.create(:name => "text", :color => "333333", :description => "Text")
 
     # size
-    width = MusicSetting.create(:name => "Width", :size => 290, :description => "Width of the player")
+    width = MusicSetting.create(:name => "width", :size => 290, :description => "Width of the player")
 
     # Boolean
     MusicSetting.create(:name => "autostart", :value => true, :description => "if true, player starts automatically")

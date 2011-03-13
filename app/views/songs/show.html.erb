@@ -5,7 +5,7 @@
 <% content_for :body_content_left do %>
   <section>
     <% if @song.resource %>
-      <%= render :partial => 'dewplayer' %>
+      <%= render :partial => 'player' %>
     <% else %>
       <%= t('.nofile') %>
     <% end %>

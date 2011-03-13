@@ -27,7 +27,7 @@
   # file info
   flashvar << "titles=#{CGI::escape(@song.title)}"
   flashvar << "artists=#{CGI::escape(@song.artist)}"
-  flashvar << "soundfile=#{CGI::escape(@song.resource.url)}"
+  flashvar << "soundFile=#{CGI::escape(@song.resource.url)}"
   # sizes
   flashvar << "width=#{MusicSetting.width}"
 
@@ -35,7 +35,7 @@
 
 <object type="application/x-shockwave-flash" data="/player.swf" height="84px" width="<%= MusicSetting.width %>"> 
   <param name="movie" value="/player.swf" /> 
-  <param name="FlashVars" value="<%= flashvar.join('&amp;') %>" /> 
+  <param name="FlashVars" value="<%= flashvar.join('&') %>" /> 
   <param name="quality" value="high" /> 
   <param name="menu" value="true" /> 
   <param name="wmode" value="transparent" /> 
