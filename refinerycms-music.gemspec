@@ -1,10 +1,13 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-music'
-  s.version           = '1.0'
-  s.description       = 'Ruby on Rails Music engine for Refinery CMS'
-  s.date              = '2011-03-11'
+  s.version           = '0.2'
   s.summary           = 'Music engine for Refinery CMS'
+  s.email             = "unixcharles@gmail.com"
+  s.homepage          = "http://github.com/unixcharles/refinerycms-music"
+  s.date              = '2011-04-17'
+  s.license           = "MIT"
+
   s.require_paths     = %w(lib)
   s.files             = Dir['lib/**/*', 'config/**/*', 'app/**/*']
 end
