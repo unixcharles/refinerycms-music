@@ -1,9 +1,11 @@
-<%= error_messages_for :music_setting -%>
-<% form_for [:admin, @music_setting] do |f| -%>
-  
+<% form_for [:admin,@music_setting] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+        :object => @music_setting,
+        :include_object_name => true
+      } %>
   <p>
     <strong>
-      <%=h @music_setting.description -%>
+      <%= @music_setting.description -%>
     </strong>
   </p>
   <% if @music_setting.value.nil? && @music_setting.size.nil? %>

@@ -3,7 +3,7 @@
     <span class='actions'>
       <% if music_setting.value != nil  %>
         <%= link_to refinery_icon_tag("#{music_setting.value ? 'cross' : 'tick'}.png"), 
-            {:action => "toggle_setting", :id => music_setting.id},
+            toggle_admin_music_setting_path(music_setting.id),
             {:title => "Set this setting to #{music_setting.value ? 'false' : 'true'}"} %>
       <% end %>
       <% if music_setting.color %>
