@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-music'
-  s.version           = '0.2'
+  s.version           = '0.2.1'
   s.summary           = 'Music engine for Refinery CMS'
   s.email             = "unixcharles@gmail.com"
   s.homepage          = "http://github.com/unixcharles/refinerycms-music"
