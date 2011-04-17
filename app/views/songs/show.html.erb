@@ -1,5 +1,5 @@
 <% content_for :body_content_title do %>
-  <%=h @song.artist %> - <%=h @song.title %>
+  <%= @song.artist %> - <%= @song.title %>
 <% end %>
 
 <% content_for :body_content_left do %>
@@ -9,9 +9,11 @@
     <% else %>
       <%= t('.nofile') %>
     <% end %>
-    <%= @song.description %>
-    <% if @song.show_download_link && @song.resource %>
-      <div style="text-align: center">
+    <div class="music-description">
+      <%= @song.description.html_safe %>
+    </div>
+    <% if @song.show_download_link && @song.resource -%>
+      <div class="music-download">
         <%= link_to t('.download'), @song.resource.url %><br/>
         <%= t('.download-advice') %>
       </div>
@@ -23,7 +25,7 @@
   <aside>
     <h2><%= t('.other') %></h2>
     <ul id="track">
-      <% @songs.each do |song| %>
+      <% @songs.each do |song| -%>
         <li id="track">
           <% if @song == song %>
            <b><%= link_to song.title, song_url(song) %></b>
