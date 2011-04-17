@@ -1,0 +1,24 @@
+en:
+  plugins:
+    music:
+      title: Musique
+  admin:
+    songs:
+      index:
+        title: Chanson
+        create_new: Ajouté une nouvelle chanson
+        reorder: Réordonner les chansons
+        reorder_done: Réorganisation des chanson terminé
+        settings: Modifier les paramètres
+        sorry_no_results: Désolé! Aucun résultat n'a été trouvé
+        no_items_yet: Il n'y a pas encore de chanson. Cliquer "Ajouté une nouvelle chanson" pour ajouté votre première chanson.
+      song:
+        view_live_html: Voir cette chanson en ligne <br/><em>(ouvre dans une nouvelle fenêtre)</em>
+        edit: Modifier cette chanson
+        delete: Effacer cette chanson pour toujours
+  songs:
+    show:
+      other: Autres Chansons
+      download-advice: "(vous allez peu-être devoir cliquer avec le boutton droit et selectionner enregistrer sous...)"
+      download: Télécharger cette chanson!
+      nofile: Oops! la chanson existe, mais nous n'avons pas encore le fichier!
