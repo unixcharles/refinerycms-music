@@ -9,5 +9,5 @@ Gem::Specification.new do |s|
   s.license           = "MIT"
 
   s.require_paths     = %w(lib)
-  s.files             = Dir['lib/**/*', 'config/**/*', 'app/**/*']
+  s.files             = Dir['lib/**/*', 'config/**/*', 'app/**/*', 'db/**/*']
 end
